@@ -1,6 +1,6 @@
 RMX3511:
   kernel:
-    - git clone https://github.com/rifsxd/android_kernel_realme_RMX3511.git -b ksu
+    - git clone https://github.com/rifsxd/android_kernel_realme_RMX3511.git -b dev
   clang:
     - git clone --depth=1 https://gitlab.com/Jprimero15/lolz_clang.git -b main
   config:
