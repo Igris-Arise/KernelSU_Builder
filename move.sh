@@ -26,7 +26,7 @@ then
 fi
 
 # Parse the JSON file to get the target
-#target=$(echo $json | jq -r --arg version "$version" '.[$version].target[]')
+target=$(echo $json | jq -r --arg version "$version" '.[$version].target[]')
 
 # Check if target is empty
 if [ -z "$target" ]
