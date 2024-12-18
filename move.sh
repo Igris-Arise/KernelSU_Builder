@@ -26,7 +26,7 @@ then
 fi
 
 # Parse the JSON file to get the target
-target=$(echo $json | jq -r --arg version "$version" '.[$version].target[]')
+#target=$(echo $json | jq -r --arg version "$version" '.[$version].target[]')
 
 # Check if target is empty
 if [ -z "$target" ]
@@ -36,7 +36,7 @@ then
 fi
 
 # Add 'kernel' to the target path
-target="${GITHUB_WORKSPACE}/kernel/$target"
+target="out/arch/arm64/boot/Image"
 
 # Check the KERNELSU environment variable and move the target to the appropriate directory
 if [ "${KERNELSU}" == "true" ]
@@ -45,3 +45,6 @@ then
 else
     mv $target "${GITHUB_WORKSPACE}/outw/false"
 fi
+
+cp "out/arch/arm64/boot/dts/vendor/xiaomi/veux.dtb" "${GITHUB_WORKSPACE}/outw/false/dtb"
+cp "out/arch/arm64/boot/dts/vendor/xiaomi/veux.dtb" "${GITHUB_WORKSPACE}/outw/true/dtb"
