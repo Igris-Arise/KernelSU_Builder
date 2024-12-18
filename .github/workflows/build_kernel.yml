@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: ["RMX3511"]
+        version: ["veux"]
 
     env:
       VERSION: ${{ matrix.version }}
