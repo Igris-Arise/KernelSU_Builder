@@ -36,7 +36,7 @@ then
 fi
 
 # Add 'kernel' to the target path
-target="out/arch/arm64/boot/Image"
+target="${GITHUB_WORKSPACE}/kernel/out/arch/arm64/boot/Image"
 
 # Check the KERNELSU environment variable and move the target to the appropriate directory
 if [ "${KERNELSU}" == "true" ]
@@ -46,5 +46,5 @@ else
     mv $target "${GITHUB_WORKSPACE}/outw/false"
 fi
 
-cp "out/arch/arm64/boot/dts/vendor/xiaomi/veux.dtb" "${GITHUB_WORKSPACE}/outw/false/dtb"
-cp "out/arch/arm64/boot/dts/vendor/xiaomi/veux.dtb" "${GITHUB_WORKSPACE}/outw/true/dtb"
+cp "${GITHUB_WORKSPACE}/kernel/out/arch/arm64/boot/dts/vendor/xiaomi/veux.dtb" "${GITHUB_WORKSPACE}/outw/false/dtb"
+cp "${GITHUB_WORKSPACE}/kernel/out/arch/arm64/boot/dts/vendor/xiaomi/veux.dtb" "${GITHUB_WORKSPACE}/outw/true/dtb"
